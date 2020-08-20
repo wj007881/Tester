@@ -4,6 +4,8 @@
     <sidebar/>
 
     <buttom/>
+    <login/>
+    <el-button @Click="Login">登录</el-button>
     <router-view/>
   </div>
 </template>
@@ -12,6 +14,7 @@
 import  sidebar from './components/sidebar';
 import  top from './components/titlebar';
 import  buttom from './components/buttom';
+import  login from './components/login';
 export default {
  methods: {
       handleOpen(key, keyPath) {
@@ -19,11 +22,14 @@ export default {
       },
       handleClose(key, keyPath) {
         console.log(key, keyPath);
+      },
+      login(){
+        this.$router.push("/login")
       }
     },
   name: 'App',
   components: {
-    sidebar,buttom,top
+    sidebar,buttom,top,login
   }
 }
 </script>
